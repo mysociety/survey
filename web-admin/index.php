@@ -11,10 +11,10 @@
  */
 
 require_once "../conf/general";
-require_once "../../phplib/error.php";
-require_once "../../phplib/db.php";
-require_once "../../phplib/utility.php";
-require_once "../../phplib/auth.php";
+require_once "../commonlib/phplib/error.php";
+require_once "../commonlib/phplib/db.php";
+require_once "../commonlib/phplib/utility.php";
+require_once "../commonlib/phplib/auth.php";
 
 function survey_handle_error($num, $message, $file, $line, $context) {
     print("<strong>$message</strong> in $file:$line");
