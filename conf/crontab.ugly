@@ -12,5 +12,5 @@ PATH=/usr/local/bin:/usr/bin:/bin
 MAILTO=sysadmin@mysociety.org
 
 # Randomly reorder rows for privacy reasons, once a day.
-59 1 * * * !!(*= $user *)!! !!(*= $randomly *)!! run-with-lockfile -n /data/vhost/!!(*= $vhost *)!!/randomly-reorder-data.lock /data/vhost/!!(*= $vhost *)!!/mysociety/survey/bin/randomly-reorder-data
+59 1 * * * !!(*= $user *)!! !!(*= $randomly *)!! run-with-lockfile -n /data/vhost/!!(*= $vhost *)!!/randomly-reorder-data.lock /data/vhost/!!(*= $vhost *)!!/survey/bin/randomly-reorder-data
 
