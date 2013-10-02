@@ -26,7 +26,11 @@ db_connect();
 
 function get_column_names() {
     $columns = array();
-    $q = db_query('select key from data_item group by key');
+    if (isset($_GET['site'])) {
+        $q = db_query('SELECT key FROM data_item WHERE site = \'' . mysql_real_escape_string($_GET['site']) . '\' GROUP BY key');
+    } else {
+        $q = db_query('SELECT key FROM data_item GROUP BY key');
+    }
     while ($r = db_fetch_row($q)) {
         $columns[] = $r[0];
     }
@@ -68,7 +72,12 @@ function csv_all_data() {
     print "\n";
 
     // print data
-    $q = db_query('select batch, key, value, whenstored, site from data_item order by batch');
+    if (isset($_GET['site'])) {
+        $q = db_query('SELECT batch, key, value, whenstored, site FROM data_item WHERE site = \'' . mysql_real_escape_string($_GET['site']) . '\' ORDER BY batch');
+    } else {
+        $q = db_query('SELECT batch, key, value, whenstored, site FROM data_item ORDER BY batch');
+    }
+
     $values = array();
     $lastbatch = "";
     while ($r = db_fetch_row($q)) {
