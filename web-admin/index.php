@@ -49,8 +49,15 @@ function overview() {
     </p>
 
     <p>
-        <a href="survey.csv">survey.csv</a> download
+        <a href="survey.csv">Download All Results</a>
     </p>
+
+    <form action="survey.csv" method="get">
+        <label for="site">Download results for site:</label><br>
+        <input type="text" name="site" id="site">
+        <input type="submit" value="Download">
+    </form>
+
     <?
 }
 

@@ -41,7 +41,7 @@ if (get_http_var('querydone')) {
     db_commit();
     print 1;
 } elseif (!count($_POST)) {
-    err("Nothing to see here.", E_USER_NOTICE);
+    exit("Nothing to see here.");
 } else {
     # Get input fields
     $site = $_POST['sourceidentifier'];
